@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+// Manages the spawn and waves of enemies
 public class WaveSpawner : MonoBehaviour
 {
 
@@ -18,13 +19,7 @@ public class WaveSpawner : MonoBehaviour
 
     private int waveIndex = 0;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    // Ticks down timer used for spawn logic and updates the text
     void Update()
     {
         if (countdown <= 0f)
@@ -38,6 +33,7 @@ public class WaveSpawner : MonoBehaviour
         waveCountText.text = Mathf.Round(countdown).ToString();
     }
 
+    // Spawns enemies in function of the waveIndex, then increments it
     IEnumerator SpawnWave()
     {
         waveIndex++;
@@ -50,6 +46,7 @@ public class WaveSpawner : MonoBehaviour
         
     }
 
+    // Spawns a new enemy on the spawnPoint
     void SpawnEnemy()
     {
         Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);

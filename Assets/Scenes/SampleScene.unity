@@ -3897,6 +3897,7 @@ GameObject:
   m_Component:
   - component: {fileID: 510826407}
   - component: {fileID: 510826406}
+  - component: {fileID: 510826408}
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: Untagged
@@ -3936,6 +3937,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &510826408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 510826405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1396a3cbacede35489b7c25476e01d64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  standardTurretPrefab: {fileID: 6127796155949881932, guid: d4d2c1c62274d904b8d9324cb5b989a6,
+    type: 3}
 --- !u!1001 &526234181
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7898,6 +7913,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7971,6 +7987,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 55, y: 0, z: 0}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ca658fd47d0cb24eba3e9bee17f46d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panBorderHeightThickness: 51
+  panSpeed: 30
+  scrollSpeed: 5
+  minZoom: 10
+  maxZoom: 80
+  minX: -5
+  maxX: 50
+  minZ: -70
+  maxZ: 5
 --- !u!1001 &971389271
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17411,3 +17448,72 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff0f336e63a2e864d8ee97fe6db447bb, type: 3}
+--- !u!1001 &7895987376277734984
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 156995392023145090, guid: d4d2c1c62274d904b8d9324cb5b989a6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 156995392023145090, guid: d4d2c1c62274d904b8d9324cb5b989a6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 156995392023145090, guid: d4d2c1c62274d904b8d9324cb5b989a6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 156995392023145090, guid: d4d2c1c62274d904b8d9324cb5b989a6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 156995392023145090, guid: d4d2c1c62274d904b8d9324cb5b989a6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 156995392023145090, guid: d4d2c1c62274d904b8d9324cb5b989a6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 156995392023145090, guid: d4d2c1c62274d904b8d9324cb5b989a6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 156995392023145090, guid: d4d2c1c62274d904b8d9324cb5b989a6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 156995392023145090, guid: d4d2c1c62274d904b8d9324cb5b989a6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 156995392023145090, guid: d4d2c1c62274d904b8d9324cb5b989a6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 156995392023145090, guid: d4d2c1c62274d904b8d9324cb5b989a6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127796155949881932, guid: d4d2c1c62274d904b8d9324cb5b989a6,
+        type: 3}
+      propertyPath: m_Name
+      value: MachineGunTower
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d4d2c1c62274d904b8d9324cb5b989a6, type: 3}
