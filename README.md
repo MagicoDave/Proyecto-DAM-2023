@@ -14,7 +14,7 @@ Repositorio del proyecto final para el ciclo superior de DAM. El proyecto consis
 * 29/04: Añadida funcionalidad a las Tiles (las casillas blancas que forman una cuadrícula): Ahora tienen un color diferente en mouseOver y crean una torreta básica al hacer click sobre una.
 * 30/04: Las balas crean un efecto de partículas al impactar y desaparecer. Corregido un error que evitaba que se eliminasen.
 * 01/05: Ahora la cámara se puede manejar durante la partida mediante las teclas (wasd) o el ratón. La tecla Esc bloquea el movimiento de la camara.
-
+* 05/05: Añadido el overlay de botones para la compra de torretas y añadido script para gestionar la pulsación de cada uno, pero falta por implementar la lógica.
 ## Cursos de formación Unity
 Repositorio usado para seguir el avance de la formación y las pruebas de los cursos de formación de Unity: Pulsa [aquí](https://github.com/MagicoDave/Cursos-unity).
 
