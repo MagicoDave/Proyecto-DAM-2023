@@ -3,8 +3,8 @@ using UnityEngine;
 // Camera movement logic and controls
 public class CameraControllerScript : MonoBehaviour
 {
-    public float panBorderHeightThickness = Screen.height / 10;
-    private float panBorderWidthThickness = Screen.width / 10;
+    private float panBorderHeightThickness = Screen.height / 30;
+    private float panBorderWidthThickness = Screen.width / 30;
 
     private bool allowMovement = true;
 

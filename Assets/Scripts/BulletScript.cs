@@ -7,6 +7,7 @@ public class BulletScript : MonoBehaviour
     private Transform target;
 
     public float speed = 70f;
+    public float explosionRadius = 0f;
     public GameObject impactParticle;
     
     // Asigns a targets to fly towards
@@ -39,16 +40,56 @@ public class BulletScript : MonoBehaviour
 
         // If no collision, flies towards target
         transform.Translate (dir.normalized * distanceThisFrame, Space.World);
+        // Bullet rotation (for rockets mainly)
+        transform.LookAt(target.position);
+
     }
 
     // Instantiates hit particle and destoys the bullet
     void HitTarget()
     {
-        Debug.Log(target.name + " got hit by a bullet"); // Debug
-
         GameObject particleInstance = (GameObject) Instantiate(impactParticle, transform.position, transform.rotation);
-        Destroy(particleInstance, 2f);
+        Destroy(particleInstance, 5f);
+
+        // Check if the attack has a explosion radious and calls corresponding method
+        if (explosionRadius > 0f)
+        {
+            Explode();
+        } else
+        {
+            Damage(target);
+        }
+        
+        // Finally, destroys the bullet
         Destroy(gameObject);
     }
 
+    // Damages every enemy caught in the explosionRadius
+    void Explode()
+    {
+        Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
+        foreach (Collider collider in colliders)
+        {
+            // This comprobation is necessary so we don't blow up unrelated game objects.
+            // That would be fun for a different type of game, though.
+            if (collider.CompareTag("Enemy"))
+            {
+                //Debug.Log(collider.name + "is inside radius explosion");
+                Damage(collider.transform);
+            }
+        }
+    }
+
+    // Damages a enemy
+    void Damage (Transform enemy)
+    {
+        Destroy(enemy.gameObject); //For debug purposes, we will instead destroy the enemy
+    }
+
+    // On selection, paints the range of the explosion radius. For debugging and testing purposes.
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, explosionRadius);
+    }
 }

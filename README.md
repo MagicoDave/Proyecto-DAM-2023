@@ -15,7 +15,13 @@ Repositorio del proyecto final para el ciclo superior de DAM. El proyecto consis
 * 30/04: Las balas crean un efecto de partículas al impactar y desaparecer. Corregido un error que evitaba que se eliminasen.
 * 01/05: Ahora la cámara se puede manejar durante la partida mediante las teclas (wasd) o el ratón. La tecla Esc bloquea el movimiento de la camara.
 * 05/05: Añadido el overlay de botones para la compra de torretas y añadido script para gestionar la pulsación de cada uno, pero falta por implementar la lógica.
+* 06/05: Implementada lógica para los botones de la tienda.
+* 06/05: Ahora hay una nueva torre: Rocket Launcher, que dispara cohetes y daña enemigos en un área, con proyectil propio y efectos de explosión incluidos.
+* 07/05: Limpieza y reestructuración del código, se crean clases y métodos para tener los scripts y sus funciones mejor organizados.
+* 07/05: Se implementa la economía del juego: Dinero y vidas. Las torres tienen ahora coste y los enemigos quitan vidas. Se actualiza la interfaz para que el jugador pueda ver ambos y tener mejor usabilidad.
+
 ## Cursos de formación Unity
+
 Repositorio usado para seguir el avance de la formación y las pruebas de los cursos de formación de Unity: Pulsa [aquí](https://github.com/MagicoDave/Cursos-unity).
 
-*Actualizado a 01/05/2023. Autor: David Casalderrey Paz*
+*Actualizado a 07/05/2023. Autor: David Casalderrey Paz*

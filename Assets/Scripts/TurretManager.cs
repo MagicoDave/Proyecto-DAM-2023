@@ -1,12 +1,17 @@
+using System.Data.SqlTypes;
+using TowerDefense.Nodes;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 // Script to manage turrets on tiles
 public class TurretManager : MonoBehaviour
 {
     public static TurretManager instance;
 
-    private GameObject turretToBuild;
-    public GameObject standardTurretPrefab;
+    private TurretBlueprint turretToBuild;
+
+    public GameObject MachineGunTurretPrefab;
+    public GameObject RocketLauncherTurretPrefab;
 
     // This method makes sure we only have one instance of the TurretManager
     // instead of calling a new one each time we click on a Tile
@@ -21,15 +26,34 @@ public class TurretManager : MonoBehaviour
         instance = this;
     }
 
-    // Sets the turret to build to one of the prefabs
-    private void Start()
+    // This is used to check if there turretToBuild is not null
+    public bool CanBuild { get { return turretToBuild != null; } }
+    // This is used to check if the player can afford the cost of the turret
+    public bool CanAfford { get { return PlayerStats.money >= turretToBuild.cost; } }
+
+    // Builds a turret on the given tile
+    public void BuildTurrentOn (TileScript tile)
     {
-        turretToBuild = standardTurretPrefab;
+        // If player has not enough money for the turret, returns
+        if (PlayerStats.money < turretToBuild.cost)
+        {
+            Debug.Log("Not enough money to build that turret!");
+            return;
+        }
+
+        // Substracts cost of the turret
+        PlayerStats.money -= turretToBuild.cost;
+
+        // Builds the turret on the specified tile
+        GameObject turret = (GameObject) Instantiate(turretToBuild.prefab, tile.GetBuildPosition(), Quaternion.identity);
+        tile.turret = turret;
+
+        Debug.Log(turret.name +  " successfully built! Money left: " + PlayerStats.money);
     }
 
-    // Get method for turretToBuild
-    public GameObject getTurretToBuild()
+    // Sets turretToBuild to the desired TurretBlueprint
+    public void SelectTurretToBuild(TurretBlueprint turret)
     {
-        return turretToBuild;
+        turretToBuild = turret;
     }
 }
