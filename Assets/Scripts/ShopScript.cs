@@ -24,28 +24,7 @@ public class ShopScript : MonoBehaviour
     // Selects a Rocket Launcher Turret prefab
     public void SelectRocketLauncherTower()
     {
-        //TODO: Rocket Launcher is not created yet
         Debug.Log("Rocket Launcher Tower selected!");
         turretManager.SelectTurretToBuild(rocketLauncherTurret);
     }
-
-    //public void BuySniperTower()
-    //{
-    //    Debug.Log("Sniper Tower purchased!");
-    //}
-
-    //public void BuyPylonTower()
-    //{
-    //    Debug.Log("Pylon Tower purchased!");
-    //}
-
-    //public void BuyEMPTower()
-    //{
-    //    Debug.Log("EMP Tower purchased!");
-    //}
-
-    //public void BuySuperTower()
-    //{
-    //    Debug.Log("Super Tower purchased!");
-    //}
 }

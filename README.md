@@ -19,6 +19,7 @@ Repositorio del proyecto final para el ciclo superior de DAM. El proyecto consis
 * 06/05: Ahora hay una nueva torre: Rocket Launcher, que dispara cohetes y daña enemigos en un área, con proyectil propio y efectos de explosión incluidos.
 * 07/05: Limpieza y reestructuración del código, se crean clases y métodos para tener los scripts y sus funciones mejor organizados.
 * 07/05: Se implementa la economía del juego: Dinero y vidas. Las torres tienen ahora coste y los enemigos quitan vidas. Se actualiza la interfaz para que el jugador pueda ver ambos y tener mejor usabilidad.
+* 08/05: Se soluciona un bug con el evento MouseEnter de los Tiles. Limpieza de interfaz, código y comentarios.
 
 ## Cursos de formación Unity
 
