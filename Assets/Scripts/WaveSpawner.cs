@@ -29,8 +29,9 @@ public class WaveSpawner : MonoBehaviour
         }
 
         countdown -= Time.deltaTime;
+        countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
 
-        waveCountText.text = Mathf.Round(countdown).ToString();
+        waveCountText.text = "Next wave in " + string.Format("{0:00.00}", countdown);
     }
 
     // Spawns enemies in function of the waveIndex, then increments it

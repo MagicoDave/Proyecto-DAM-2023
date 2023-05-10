@@ -13,6 +13,8 @@ public class TurretManager : MonoBehaviour
     public GameObject MachineGunTurretPrefab;
     public GameObject RocketLauncherTurretPrefab;
 
+    public GameObject buildEffect;
+
     // This method makes sure we only have one instance of the TurretManager
     // instead of calling a new one each time we click on a Tile
     private void Awake()
@@ -47,6 +49,10 @@ public class TurretManager : MonoBehaviour
         // Builds the turret on the specified tile
         GameObject turret = (GameObject) Instantiate(turretToBuild.prefab, tile.GetBuildPosition(), Quaternion.identity);
         tile.turret = turret;
+
+        // Plays a cool steam effect when the turret is built, then destroys it after 2 seconds
+        GameObject effect = (GameObject) Instantiate(buildEffect, tile.GetBuildPosition(), Quaternion.identity);
+        Destroy(effect, 2f);
 
         Debug.Log(turret.name +  " successfully built! Money left: " + PlayerStats.money);
     }
