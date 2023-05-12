@@ -10,9 +10,15 @@ public class PlayerStats : MonoBehaviour
     // Default starting ammount of money
     public int startMoney = 400;
 
+    // Lifes, the ammount of damage enemies can do before you lose
+    public static int lives;
+    // Default starting ammount of lives
+    public int startLives = 20;
+
     void Start()
     {
         money = startMoney;
+        lives = startLives;
     }
 
 }

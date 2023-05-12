@@ -1,7 +1,4 @@
-using System.Data.SqlTypes;
-using TowerDefense.Nodes;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 // Script to manage turrets on tiles
 public class TurretManager : MonoBehaviour

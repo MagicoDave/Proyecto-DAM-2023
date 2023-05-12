@@ -6,6 +6,7 @@ public class BulletScript : MonoBehaviour
 
     private Transform target;
 
+    public int damage = 50;
     public float speed = 70f;
     public float explosionRadius = 0f;
     public GameObject impactParticle;
@@ -83,7 +84,13 @@ public class BulletScript : MonoBehaviour
     // Damages a enemy
     void Damage (Transform enemy)
     {
-        Destroy(enemy.gameObject); //For debug purposes, we will instead destroy the enemy
+        EnemyScript e = enemy.GetComponent<EnemyScript>();
+
+        if (e != null) 
+        {
+            e.TakeDamage(damage);
+        }
+        
     }
 
     // On selection, paints the range of the explosion radius. For debugging and testing purposes.

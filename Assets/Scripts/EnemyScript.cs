@@ -1,10 +1,16 @@
 using UnityEngine;
 
 // Class for enemy movement logic
-public class EnemyMovement : MonoBehaviour
+public class EnemyScript : MonoBehaviour
 {
-
+    // Movement speed of the Enemy
     public float speed = 10f;
+    // Ammount of damage the Enemy can take before being destroyed
+    public int health = 100;
+    // Money the Enemy drops when killed
+    public int loot = 50;
+    // Death effect
+    public GameObject deathEffect;
     // The current waypoint the enemy is heading for
     private Transform target;
     // This is used to track witch waypoint comes next
@@ -16,6 +22,29 @@ public class EnemyMovement : MonoBehaviour
     {
         // Sets the first waypoint as the next goal
         target = WaypointsScript.points[0];
+    }
+
+    // Deals damage to the health of the Enemy
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+
+        if (health <= 0) 
+        {
+            Die();
+        }
+    }
+
+    // Destroys the Enemy
+    void Die()
+    {
+        // Death effect
+        GameObject effect = (GameObject) Instantiate(deathEffect, transform.position, Quaternion.identity);
+        Destroy(effect, 5f);
+        // Adds its loot to player's money
+        PlayerStats.money += loot;
+        // Destroys the enemy
+        Destroy(gameObject);
     }
 
     // Update is called once per frame
@@ -38,11 +67,17 @@ public class EnemyMovement : MonoBehaviour
     {
         if (wavepointIndex >= WaypointsScript.points.Length - 1)
         {
-            Destroy(gameObject);
+            EndPath();
             return;
         }
 
         wavepointIndex++;
         target = WaypointsScript.points[wavepointIndex];
+    }
+
+    void EndPath ()
+    {
+        PlayerStats.lives--;
+        Destroy (gameObject);
     }
 }

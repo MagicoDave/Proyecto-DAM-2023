@@ -21,9 +21,10 @@ Repositorio del proyecto final para el ciclo superior de DAM. El proyecto consis
 * 07/05: Se implementa la economía del juego: Dinero y vidas. Las torres tienen ahora coste y los enemigos quitan vidas. Se actualiza la interfaz para que el jugador pueda ver ambos y tener mejor usabilidad.
 * 08/05: Se soluciona un bug con el evento MouseEnter de los Tiles. Limpieza de interfaz, código y comentarios.
 * 10/05: Se ultiman detalles de la interfaz: Los botones de las torres tienen ahora texto con el coste, hay botón de opciones y las torretas tienen un efecto de partículas al construirse para que sea más claro lo que el jugador acaba de hacer.
+* 12/05: Se ajustan estadísticas de enemigos y torres. Efecto de muerte de los enemigos. Se elimina buena parte de las mecánicas simplificadas a modo de placeholder de las interacciones de enemigos y torretas y se sustituyen por las definitivas.
 
 ## Cursos de formación Unity
 
 Repositorio usado para seguir el avance de la formación y las pruebas de los cursos de formación de Unity: Pulsa [aquí](https://github.com/MagicoDave/Cursos-unity).
 
-*Actualizado a 10/05/2023. Autor: David Casalderrey Paz*
+*Actualizado a 12/05/2023. Autor: David Casalderrey Paz*
