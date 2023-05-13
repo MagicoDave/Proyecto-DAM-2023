@@ -3,8 +3,16 @@ using UnityEngine;
 // Manages logic for game status actions
 public class GameStateManager : MonoBehaviour
 {
+    // Used to control the state of the game, if the game over status is on
+    public static bool gameOver;
+    // Reference to the gameOverUI
+    public GameObject gameOverUI;
 
-    private bool gameOver = false;
+    // Initializes gameOver at false
+    void Start()
+    {
+        gameOver = false;
+    }
 
     // Update is called once per frame
     void Update()
@@ -20,10 +28,11 @@ public class GameStateManager : MonoBehaviour
         }
     }
 
-    // Game over event
+    // Set the game state to Game Over
     void EndGame()
     {
         gameOver = true;
-        Debug.Log("Game Over!");
+
+        gameOverUI.SetActive(true);
     }
 }

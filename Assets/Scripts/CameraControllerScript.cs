@@ -25,8 +25,14 @@ public class CameraControllerScript : MonoBehaviour
     void Update()
     {
 
+        if (GameStateManager.gameOver)
+        {
+            this.enabled = false;
+            return;
+        }
+
         // Esc key toggles camera movement
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.L))
         {
             allowMovement = !allowMovement;
         }

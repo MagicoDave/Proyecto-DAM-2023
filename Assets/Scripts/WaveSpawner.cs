@@ -12,10 +12,11 @@ public class WaveSpawner : MonoBehaviour
     public Transform spawnPoint;
 
     public float timeBetweenWaves = 5f;
-    private float countdown = 2f;
+    private float countdown = 5f;
     private float timeToSpawn = 0.5f;
 
-    public TextMeshProUGUI waveCountText;
+    public TextMeshProUGUI nextWaveText;
+    public TextMeshProUGUI waveNumberText;
 
     private int waveIndex = 0;
 
@@ -31,13 +32,16 @@ public class WaveSpawner : MonoBehaviour
         countdown -= Time.deltaTime;
         countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
 
-        waveCountText.text = "Next wave in " + string.Format("{0:00.00}", countdown);
+        nextWaveText.text = "Next wave in " + string.Format("{0:00.00}", countdown);
     }
 
     // Spawns enemies in function of the waveIndex, then increments it
     IEnumerator SpawnWave()
     {
         waveIndex++;
+        PlayerStats.wave++;
+
+        waveNumberText.text = "Wave " + PlayerStats.wave.ToString();
 
         for (int i = 0; i < waveIndex; i++)
         {

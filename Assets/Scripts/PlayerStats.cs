@@ -15,10 +15,15 @@ public class PlayerStats : MonoBehaviour
     // Default starting ammount of lives
     public int startLives = 20;
 
+    // Number of the round
+    public static int wave;
+
+    // Initializates the player stats with default values
     void Start()
     {
         money = startMoney;
         lives = startLives;
+        wave = 0;
     }
 
 }
