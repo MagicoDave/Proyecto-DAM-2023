@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 7287114099434497016}
   - component: {fileID: 8199087086466199989}
   - component: {fileID: -7923853896393425042}
+  - component: {fileID: 8658699454181113867}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: EnemyTough
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f0a6b6771cb609b43a2d50eca76e3456, type: 2}
+  - {fileID: 2100000, guid: 1f06c952744d67249b825cd0f0bb2ee6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -110,8 +111,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de6e086e4070b03469aaf5d35944f6ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  health: 100
-  loot: 50
-  deathEffect: {fileID: 1897329234822723177, guid: 79e10558d5f7c4441b88a8ceb0822147,
+  baseSpeed: 7
+  currentSpeed: 0
+  health: 350
+  loot: 150
+  deathEffect: {fileID: 1897329234822723177, guid: d5c4c7fe57c95b54c96ab53d88fe44b2,
     type: 3}
+--- !u!114 &8658699454181113867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2410879165502450734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92201a7c29da45a41a2ab4d3e3629f81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

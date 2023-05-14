@@ -84,7 +84,7 @@ public class BulletScript : MonoBehaviour
     // Damages a enemy
     void Damage (Transform enemy)
     {
-        EnemyScript e = enemy.GetComponent<EnemyScript>();
+        Enemy e = enemy.GetComponent<Enemy>();
 
         if (e != null) 
         {

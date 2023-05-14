@@ -2,12 +2,12 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Manages the gameOverUI
-public class GameOverScript : MonoBehaviour
+// Manages the victory screen UI
+public class YouWonScript : MonoBehaviour
 {
     public TextMeshProUGUI waveText;
 
-    // Used to get the correct number of waves survived when the gameover screen pops up
+    // Used to get the correct number of waves survived when the victory screen pops up
     private void OnEnable()
     {
         waveText.text = PlayerStats.wave.ToString();

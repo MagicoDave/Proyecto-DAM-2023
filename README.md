@@ -23,9 +23,10 @@ Repositorio del proyecto final para el ciclo superior de DAM. El proyecto consis
 * 10/05: Se ultiman detalles de la interfaz: Los botones de las torres tienen ahora texto con el coste, hay botón de opciones y las torretas tienen un efecto de partículas al construirse para que sea más claro lo que el jugador acaba de hacer.
 * 12/05: Se ajustan estadísticas de enemigos y torres. Efecto de muerte de los enemigos. Se elimina buena parte de las mecánicas simplificadas a modo de placeholder de las interacciones de enemigos y torretas y se sustituyen por las definitivas.
 * 13/05: Se añaden pantallas de menú principal, pausa y game over y se programa la navegación entre las mismas. Se corrijen varios pequeños bugs relacionados con la UI (algunos textos no se actualizaban correctamente).
+* 14/05: Se añade una nueva torreta: Laser Turret, que dispara continuamente y ralentiza a los enemigos. Reestructurado el código de WaveManager para poder realizar oleadas más complejas, ahora hay tres variantes de enemigos con diferentes niveles de velocidad y resistencia. El juego ahora termina al acabar la séptima oleada con éxito.
 
 ## Cursos de formación Unity
 
 Repositorio usado para seguir el avance de la formación y las pruebas de los cursos de formación de Unity: Pulsa [aquí](https://github.com/MagicoDave/Cursos-unity).
 
-*Actualizado a 13/05/2023. Autor: David Casalderrey Paz*
+*Actualizado a 14/05/2023. Autor: David Casalderrey Paz*

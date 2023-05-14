@@ -1,16 +1,12 @@
 using UnityEngine;
 
-// Class for enemy movement logic
-public class EnemyScript : MonoBehaviour
+// Class for managing enemy movement
+[RequireComponent (typeof(Enemy))]
+public class EnemyMovement : MonoBehaviour
 {
-    // Movement speed of the Enemy
-    public float speed = 10f;
-    // Ammount of damage the Enemy can take before being destroyed
-    public int health = 100;
-    // Money the Enemy drops when killed
-    public int loot = 50;
-    // Death effect
-    public GameObject deathEffect;
+
+    private Enemy enemy;
+
     // The current waypoint the enemy is heading for
     private Transform target;
     // This is used to track witch waypoint comes next
@@ -20,31 +16,10 @@ public class EnemyScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        enemy = GetComponent<Enemy>();
+
         // Sets the first waypoint as the next goal
         target = WaypointsScript.points[0];
-    }
-
-    // Deals damage to the health of the Enemy
-    public void TakeDamage(int damage)
-    {
-        health -= damage;
-
-        if (health <= 0) 
-        {
-            Die();
-        }
-    }
-
-    // Destroys the Enemy
-    void Die()
-    {
-        // Death effect
-        GameObject effect = (GameObject) Instantiate(deathEffect, transform.position, Quaternion.identity);
-        Destroy(effect, 5f);
-        // Adds its loot to player's money
-        PlayerStats.money += loot;
-        // Destroys the enemy
-        Destroy(gameObject);
     }
 
     // Update is called once per frame
@@ -52,13 +27,15 @@ public class EnemyScript : MonoBehaviour
     {
         // Moves the enemy towards the waypoint
         Vector3 dir = target.position - transform.position;
-        transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
+        transform.Translate(dir.normalized * enemy.currentSpeed * Time.deltaTime, Space.World);
 
         // When the enemy reaches the waypoint, it moves towards the next one
         if (Vector3.Distance(transform.position, target.position) <= 0.4f)
         {
             GetNextWaypoint();
         }
+
+        enemy.currentSpeed = enemy.baseSpeed;
     }
 
     // Checks if the enemy reached the last waypoint and destroys it if that's the case.
@@ -75,9 +52,11 @@ public class EnemyScript : MonoBehaviour
         target = WaypointsScript.points[wavepointIndex];
     }
 
-    void EndPath ()
+    void EndPath()
     {
+        WaveSpawner.EnemiesAlive--;
         PlayerStats.lives--;
-        Destroy (gameObject);
+        Destroy(gameObject);
     }
+
 }

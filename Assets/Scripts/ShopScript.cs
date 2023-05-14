@@ -5,6 +5,7 @@ public class ShopScript : MonoBehaviour
 {
     public TurretBlueprint machineGunTurret;
     public TurretBlueprint rocketLauncherTurret;
+    public TurretBlueprint laserTurret;
 
     TurretManager turretManager;
 
@@ -26,5 +27,12 @@ public class ShopScript : MonoBehaviour
     {
         Debug.Log("Rocket Launcher Tower selected!");
         turretManager.SelectTurretToBuild(rocketLauncherTurret);
+    }
+
+    // Selects a Laser Turret prefab
+    public void SelectLaserTower()
+    {
+        Debug.Log("Laser Tower selected!");
+        turretManager.SelectTurretToBuild(laserTurret);
     }
 }

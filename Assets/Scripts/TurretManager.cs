@@ -7,8 +7,9 @@ public class TurretManager : MonoBehaviour
 
     private TurretBlueprint turretToBuild;
 
-    public GameObject MachineGunTurretPrefab;
-    public GameObject RocketLauncherTurretPrefab;
+    //public GameObject MachineGunTurretPrefab;
+    //public GameObject RocketLauncherTurretPrefab;
+    //public GameObject LaserTurretPrefab;
 
     public GameObject buildEffect;
 
