@@ -26,6 +26,12 @@ public class WaveSpawner : MonoBehaviour
     // Victory UI
     public GameObject youWonUI;
 
+    // Initializes EnemiesAlive at zero
+    void Start()
+    {
+        EnemiesAlive = 0;    
+    }
+
     // Ticks down timer used for spawn logic and updates the text
     void Update()
     {
@@ -37,7 +43,7 @@ public class WaveSpawner : MonoBehaviour
         }
 
         // When the last wave ends, stop spawning. Level won!
-        if (waveIndex == waves.Length)
+        if (waveIndex == waves.Length && !GameStateManager.gameOver)
         {
             Debug.Log("It entered the if clausule");
             youWonUI.SetActive(true);
